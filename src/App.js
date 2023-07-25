@@ -6,6 +6,7 @@ function App() {
         Hello world!
         <hr/>
         Hello world!
+        2
     </center>
   );
 }
