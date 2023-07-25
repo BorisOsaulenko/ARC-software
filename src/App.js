@@ -4,6 +4,8 @@ function App() {
   return (
     <div className="App">
         Hello world!
+        <hr/>
+        Hello world!
     </div>
   );
 }
