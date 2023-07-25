@@ -5,7 +5,6 @@ function App() {
     <div className="App">
         Hello world!
         <hr/>
-        Hello world!
     </div>
   );
 }
