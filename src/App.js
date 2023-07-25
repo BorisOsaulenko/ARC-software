@@ -2,11 +2,11 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <center className="App">
         Hello world!
         <hr/>
         Hello world!
-    </div>
+    </center>
   );
 }
 
