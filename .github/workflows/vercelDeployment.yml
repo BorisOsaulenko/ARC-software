@@ -12,9 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Building app
-        run: "npm run build"
-
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
