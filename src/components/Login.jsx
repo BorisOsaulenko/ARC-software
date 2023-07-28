@@ -14,29 +14,23 @@ const Login = () => {
         loop
       />
 
-      <GoogleOAuthProvider
-        clientId={
-          "705664167383-t37t3itqu9t1ceoq90u6ncv9e7ldctcd.apps.googleusercontent.com"
-        }
-      >
-        <GoogleLogin
-          render={(renderProps) => {
-            <button
-              type="button"
-              className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
-              onClick={renderProps.onClick}
-              disabled={renderProps.disabled}
-            >
-              <FcGoogle className="mr-4" /> Sign in with your Google Account
-            </button>;
-          }}
-          cookiePolicy="single_host_origin"
-          onSuccess={() => {}}
-          onError={() => {
-            console.log(":(");
-          }}
-        />
-      </GoogleOAuthProvider>
+      <GoogleLogin
+        render={(renderProps) => {
+          <button
+            type="button"
+            className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
+            onClick={renderProps.onClick}
+            disabled={renderProps.disabled}
+          >
+            <FcGoogle className="mr-4" /> Sign in with your Google Account
+          </button>;
+        }}
+        cookiePolicy="single_host_origin"
+        onSuccess={() => {}}
+        onError={() => {
+          console.log(":(");
+        }}
+      />
     </div>
   );
 };
