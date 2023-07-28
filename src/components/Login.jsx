@@ -23,6 +23,7 @@ const Login = () => {
               disabled={renderProps.disabled}
             ></button>;
           }}
+          onSuccess={() => {}}
         />
       </GoogleOAuthProvider>
     </div>
