@@ -2,8 +2,11 @@ import React from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
 import jwt_decode from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const login = (credential) => {
     let doc = {
       name: credential.name,
@@ -14,11 +17,12 @@ const Login = () => {
 
     localStorage.setItem("user", JSON.stringify(credential)); // current account on the device
     // DB.createUserIfNotExist(doc) - create account in the db. User can always login back to it.
+
+    navigate("/home");
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center bg-black ">
-      <div className="absolute top-0 bottom-0 left-0 right-0 bg-black z-10 opacity-30"></div>
+    <div className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center bg-black">
       <video
         src="/media/share.mp4"
         className="absolute top-0 bottom-0 left-0 right-0"
@@ -27,20 +31,22 @@ const Login = () => {
         loop
       />
 
-      <h1 className="text-9xl z-10 py-7 bg-gradient-to-tl to-purple-300 from-pink-700 bg-clip-text text-transparent">
+      <h1 className="text-9xl z-10 py-7 bg-gradient-to-tl to-purple-300 from-pink-700 bg-clip-text text-transparent mb-10">
         Blog name
       </h1>
 
       <GoogleLogin
         render={(renderProps) => {
-          <button
-            type="button"
-            className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
-            onClick={renderProps.onClick}
-            disabled={renderProps.disabled}
-          >
-            <FcGoogle className="mr-4" /> Sign in with your Google Account
-          </button>;
+          return (
+            <button
+              type="button"
+              className="flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
+              onClick={renderProps.onClick}
+              disabled={renderProps.disabled}
+            >
+              <FcGoogle className="mr-4" /> Sign in with your Google Account
+            </button>
+          );
         }}
         cookiePolicy="single_host_origin"
         onSuccess={(credentials) => {
@@ -53,5 +59,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
