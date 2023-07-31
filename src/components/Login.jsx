@@ -31,7 +31,7 @@ const Login = () => {
         loop
       />
 
-      <h1 className="text-9xl z-10 py-7 bg-gradient-to-tl to-purple-300 from-pink-700 bg-clip-text text-transparent mb-10">
+      <h1 className="text-9xl z-10 py-7 bg-gradient-to-tl to-purple-400 from-pink-600 bg-clip-text text-transparent mb-10">
         Blog name
       </h1>
 
