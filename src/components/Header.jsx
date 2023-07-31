@@ -1,8 +1,9 @@
 import React from "react";
+import { getName, getPictureUrl } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const name = JSON.parse(localStorage.getItem("user")).name;
-  const imgUrl = JSON.parse(localStorage.getItem("user")).picture;
+  const navigate = useNavigate();
 
   return (
     <div className="w-screen h-24 bg-slate-400 p-5 flex justify-between">
@@ -25,10 +26,18 @@ const Header = () => {
       </div>
 
       <div className="flex items-center w-3/12 justify-between">
-        <span className="text-2xl font-bold bg-gradient-to-tl to-purple-400 from-pink-600 bg-clip-text text-transparent">
-          {name}
+        <span
+          className="text-2xl font-bold bg-gradient-to-tl to-purple-400 from-pink-600 bg-clip-text text-transparent cursor-pointer"
+          onClick={() => navigate("/settings")}
+        >
+          {getName()}
         </span>
-        <img src={imgUrl} alt="your avatar" className="w-1/4 rounded" />
+        <img
+          src={getPictureUrl()}
+          alt="your avatar"
+          className="w-1/4 rounded cursor-pointer"
+          onClick={() => navigate("/settings")}
+        />
       </div>
     </div>
   );
