@@ -11,18 +11,16 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 function App() {
   return (
     <GoogleOAuthProvider
-      clientId={
-        "705664167383-n48i8kccvmeoa8u8n5d92net00lnsaqa.apps.googleusercontent.com"
-      }
+      clientId={String(process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID)}
     >
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Articles />} />
-        <Route path='/users' element={<User id={1} />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Articles />} />
+          <Route path='/users' element={<User id={1} />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </GoogleOAuthProvider>
   );
 }
