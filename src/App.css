@@ -1,0 +1,12 @@
+@keyframes growDown {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.growDown {
+    animation: growDown 300ms linear;
+}
