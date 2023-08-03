@@ -5,9 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        
-      },
       width: {
         '1/24': '4.2%',
         '2/24': '8.3%',
@@ -33,6 +30,18 @@ module.exports = {
         '22/24': '91,7%',
         '23/24': '95.8%',
         '24/24': '100%'
+      },
+      colors: {
+        'sidebarText': 'rgb(110,132,163)',
+        'inputBackground': 'rgb(200,255,255)'
+      },
+      textColor: {
+        'sidebarText': 'rgb(110,132,163)',
+        'activeColor': '#232d4f'
+      },
+      borderWidth: {
+        1: '1px',
+        0.5: '0.5px',
       }
     },
   },
