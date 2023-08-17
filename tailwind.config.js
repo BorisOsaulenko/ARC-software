@@ -33,7 +33,8 @@ module.exports = {
       },
       colors: {
         'sidebarText': 'rgb(110,132,163)',
-        'inputBackground': 'rgb(200,255,255)'
+        'inputBackground': 'rgb(200,255,255)',
+        'buttonPrimary': '#0d6efd;'
       },
       textColor: {
         'sidebarText': 'rgb(110,132,163)',

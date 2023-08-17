@@ -28,3 +28,7 @@ export const getSidebarHelperButtons = () => {
         {name: 'Changelog', icon: FaCodeBranch, link: '/changelog'},
     ]
 }
+
+export const getPicture = () => {
+    return (localStorage.getItem('user') !== undefined ? JSON.parse(localStorage.getItem("user")).picture : null)
+}

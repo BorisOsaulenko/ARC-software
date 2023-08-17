@@ -20,8 +20,8 @@ const SidebarDropdownInput: FC<Props> = ({name, link, placeholder}) => {
           {name}
         </span>
 
-        <div className=' w-4/5 relative left-7'>
-          <input placeholder={placeholder} className="dropdownInput"></input>
+        <div className=' w-4/5 relative left-7 mt-1'>
+          <input placeholder={placeholder} className="dropdownInput rounded-sm"></input>
         </div>
       </div>
     </div>
