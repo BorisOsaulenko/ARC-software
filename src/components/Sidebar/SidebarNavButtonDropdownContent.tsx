@@ -1,5 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
-import { FaKeyboard } from 'react-icons/fa' // used just for creating the same margin as parent
+import React, { FC, useRef } from 'react'
 import SidebarDropdownLink from './SidebarDropdownLink'
 import SidebarDropdownValue from './SidebarDropdownValue'
 import SidebarDropdownInput from './SidebarDropdownInput'

@@ -8,7 +8,7 @@ import Home from './containers/Home';
 import Login from './components/Login';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import AppRoutes from './AppRoutes';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
   return (
