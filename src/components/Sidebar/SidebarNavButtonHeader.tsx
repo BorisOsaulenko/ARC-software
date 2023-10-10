@@ -24,18 +24,18 @@ const SidebarNavButton: FC<Props> = ({
 
   return (
     <div //header of dropdown button
-      className={"sidebarHeader pointer-events-auto " + (active ? "active" : '')}
+      className={"dropdownHeader " + (active ? "active" : '')}
 
       onClick={() => {
         active ? setActive('') : setActive(name)
       }}
     >
-      <Icon className="headerIcon" />
-      <span className="headerButtonName" onClick={() => link && navigate(link)}>
+      <Icon className="dropdownHeaderIcon" />
+      <span className="dropdownHeaderButtonName" onClick={() => link && navigate(link)}>
         {name}
       </span>
       {dropdowns && (
-        <RiArrowDropDownLine className="sidebarDropDownHeaderArrow" style={{rotate: active ? '180deg' : '0deg'}} />
+        <RiArrowDropDownLine className="dropdownHeaderArrow" style={{rotate: active ? '180deg' : '0deg'}} />
       )}
     </div>
   );

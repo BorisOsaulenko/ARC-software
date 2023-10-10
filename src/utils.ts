@@ -1,18 +1,83 @@
-export const getName = () => {
-    return JSON.parse(String(localStorage.getItem('user'))).name
-}
-export const getPictureUrl = () => {
-    return JSON.parse(String(localStorage.getItem('user'))).picture
-}
-export const getHomeStats = () => {
-    return [                    // value will be got through DB
-        {'stat': 'Followers', 'value': 5, 'hint': 'See followers list', 'hintUrl': '/statistics#followers'}, 
-        {'stat': 'Posts', 'value': 10, 'hint': 'See posts list', 'hintUrl': '/statistics#posts'},
-        {'stat': 'Subscriptions', 'value': 2, 'hint': 'See subscriptions list', 'hintUrl': '/statistics#subscriptions'},
-        {'stat': 'Views', 'value': 5, 'hint': 'See views list', 'hintUrl': '/statistics#views'},
-        {'stat': 'Likes', 'value': 0, 'hint': 'See likes list', 'hintUrl': '/statistics#likes'},
-        {'stat': 'Average views on post', 'value': 40, 'hint': 'See views list', 'hintUrl': '/statistics#views'},
+import { FaHeart, FaKeyboard, FaEye, FaHandshake, FaAd, FaQuestion, FaCommentDots, FaCodeBranch } from "react-icons/fa";
 
-        {'stat': 'Account creation date', 'value': '2023.04.02'},
-    ]
+export const getStats = () => {
+  return [
+    { name: "Followers", value: 0, hint: "See follower list", hintUrl: "/statistics/#followers" },
+    { name: "Posts", value: 0, hint: "See posts list", hintUrl: "/statistics/#posts" },
+    { name: "Views", value: 0, hint: "See views list", hintUrl: "/statistics/#views" },
+    { name: "Likes", value: 0, hint: "See likes list", hintUrl: "/statistics/#likes" },
+    { name: "Subscriptions", value: 0, hint: "See subscriptions list", hintUrl: "/statistics/#subscriptions" },
+    {
+      name: "Account creation date",
+      value: "2022.10.04",
+      hint: "See account history",
+      hintUrl: "/statistics/#account",
+    },
+  ];
+};
+
+export const getSidebarButtons = () => {
+  return [
+    // 3 types of dropdowns: link - default, value, input
+    {
+      name: "Followers",
+      icon: FaHeart,
+      dropdowns: [
+        { name: "See followers list", link: "/statistics#followers/?type=list" },
+        { name: "Followers statistics", link: "/statistics#followers?type=graph" },
+        { name: "Followers: ", value: 0 },
+      ],
+    },
+    {
+      name: "Posts",
+      icon: FaKeyboard,
+      dropdowns: [
+        { name: "See posts list", link: "/statistics#posts/?type=list" },
+        { name: "Posts statistics", link: "/statistics#posts?type=graph" },
+        { name: "Posts: ", value: 0 },
+      ],
+    },
+    { name: "Trends", icon: FaAd, link: "/trends" },
+    {
+      name: "Views",
+      icon: FaEye,
+      dropdowns: [
+        { name: "See views statistics", link: "/statistics#views?type=list" },
+        { name: "Views graph", link: "/statistics#views?type=graph" },
+        { name: "Views: ", value: 0 },
+      ],
+    },
+    {
+      name: "Subscriptions",
+      icon: FaHandshake,
+      dropdowns: [
+        { name: "See subscriptions list", link: "/statistics#subscriptions?type=list" },
+        { name: "Manage subscriptions", link: "/statistics#subscriptions?type=list" },
+        { name: "Subscriptions: ", value: 0 },
+      ],
+    },
+  ];
+};
+
+export const getSidebarHelperButtons = () => {
+  return [
+    {
+      name: "Q&A",
+      icon: FaQuestion,
+      dropdowns: [
+        { name: "See Q&A page", link: "/Q&A" },
+        { name: "Look for questions: ", placeholder: "Keywords:" },
+      ],
+    },
+    { name: "Forum", icon: FaCommentDots, link: "/Forum" },
+    { name: "Changelog", icon: FaCodeBranch, link: "/changelog" },
+  ];
+};
+
+export const getPicture = () => {
+  return localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string).picture : null;
+};
+
+export enum backendUrls {
+  CREATE_USER = "",
 }

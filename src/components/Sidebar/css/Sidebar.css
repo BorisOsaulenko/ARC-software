@@ -1,0 +1,37 @@
+:root {
+  --distanceBetweenButtons: 1rem;
+  --animationDuration: 300ms;
+  --colorNormal: rgb(110, 132, 163);
+  --colorActive: #232d4f;
+  --marginRight: 1.5rem;
+  --marginLeft: 2rem;
+  --marginRightValue: 3rem;
+  --marginRightArrowDropdown: 1.5rem;
+  --marginTopLogo: 1rem;
+  --sidebarWidth: 20rem;
+}
+
+#sidebar {
+  width: var(--sidebarWidth);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh);
+
+  padding-top: 0.75rem;
+  border-right-width: 1px;
+  overflow-y: scroll;
+}
+.active {
+  transition: var(--animationDuration);
+  color: var(--colorActive);
+}
+
+#sidebar > * {
+  color: var(--colorNormal);
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
+}

@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Articles from "./containers/Articles";
 import User from "./components/User";
 import Home from "./containers/Home";
-import Login from "./components/Login";
+import Login from "./components/Login/Login";
 import Trends from "./containers/Trends";
 
 const AppRoutes = () => {

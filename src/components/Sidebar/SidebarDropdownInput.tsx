@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import { FaKeyboard } from 'react-icons/fa' // just for same margins as parent
 import { useNavigate } from 'react-router-dom'
 
@@ -12,11 +12,11 @@ const SidebarDropdownInput: FC<Props> = ({name, link, placeholder}) => {
   const navigate = useNavigate()
 
   return (
-    <div className="sidebar-dropdownItem">
+    <div className="dropdownItem" onClick={() => navigate(link)}>
       <FaKeyboard className="dropdownIcon" />
 
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <span style={{ marginLeft: "1rem" }} onClick={() => navigate(link)}>
+        <span style={{ marginLeft: "1rem" }}>
           {name}
         </span>
 

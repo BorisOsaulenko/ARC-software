@@ -12,9 +12,9 @@ const SidebarDropdownValue: FC<Props> = ({name, link, value}) => {
   const navigate = useNavigate()
 
   return (
-    <div className="sidebar-dropdownItem sidebar-value" key={name}>
+    <div className="dropdownItem sidebar-value" key={name} onClick={() => navigate(link)}>
       <FaKeyboard className="dropdownIcon" />
-      <span style={{ marginLeft: "1rem" }} onClick={() => navigate(link)}>
+      <span style={{ marginLeft: "1rem" }}>
         {name}
       </span>
       <span

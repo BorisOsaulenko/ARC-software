@@ -43,6 +43,11 @@ module.exports = {
       borderWidth: {
         1: '1px',
         0.5: '0.5px',
+      },
+      margin: {
+        top: {
+          '15': '3.75rem'
+        }
       }
     },
   },
