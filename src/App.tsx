@@ -1,21 +1,11 @@
-import './index.css';
-import './App.css'
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom'
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import AppRoutes from './AppRoutes';
-import Sidebar from './components/Sidebar/Sidebar';
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
-    <GoogleOAuthProvider
-      clientId={String(process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID)}
-    >
-      <BrowserRouter>
-        {window.location.href !== "http://localhost:3000/login" && <Sidebar />}
-        <AppRoutes/>
-      </BrowserRouter>
-    </GoogleOAuthProvider>
+    <h1 className="text-3xl font-bold underline text-red-600">
+      Simple React Typescript Tailwind Sample
+    </h1>
   );
 }
 

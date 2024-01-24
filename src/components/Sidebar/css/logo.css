@@ -1,7 +1,0 @@
-.sidebarLogo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: var(--marginTopLogo);
-    margin-bottom: 12px;
-}
